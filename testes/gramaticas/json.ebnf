@@ -1,0 +1,12 @@
+(* Subconjunto de JSON: objetos, vetores, strings, numeros e booleanos *)
+TOKENS
+  STR  = /"[^"\n]*"/ ;
+  NUM  = /-?[0-9]+/ ;
+  SKIP = /[ \t\r\n]+/ ;
+
+RULES
+  valor  = objeto | vetor | STR | NUM | "true" | "false" | "null" ;
+  objeto = "{" [ par { "," par } ] "}" ;
+  par    = STR ":" valor ;
+  vetor  = "[" [ valor { "," valor } ] "]" ;
+

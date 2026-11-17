@@ -1,0 +1,2 @@
+{ "nome": "aluno", "nota": 10, "aprovado": true }
+
